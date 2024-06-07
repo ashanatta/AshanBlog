@@ -1,0 +1,14 @@
+/* body {
+  background-color: aqua;
+} */
+
+/* .navbar-brand
+{
+  font-size: 2rem;
+} */
+
+.nav-item:hover
+{
+    color: white;
+    background-color: #dc3545; 
+}

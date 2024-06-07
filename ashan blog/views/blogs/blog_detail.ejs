@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head") %>
+</head>
+
+<body>
+  <%- include("../partials/navbar") %>
+
+    <div class="container p-5">
+      <h1 class="text-center fw-bold text-uppercase">
+        <%= foundBlog.title %>
+      </h1>
+      <div class="d-flex justify-content-center p-3">
+        <div class="">
+          <span><img class="rounded-circle" src="/img/<%= foundBlog.author %>.JPG" onerror="this.src='/img/profile.JPG'" style="width:3rem;"
+              alt="<%= foundBlog.author %>Image"></span>
+
+          <span class="pt-1 text-capitalize">Written By <%= foundBlog.author %></span>
+          <span class="pt-1 text-capitalize fw-light">. <%= foundBlog.createdDate %></span>
+        </div>
+      </div>
+
+      <img class="rounded rounded-5 p-3" style="width: 100%;" src="<%= foundBlog.image %> " alt="" />
+      <h6 class="text-center fw-light">
+        <%= foundBlog.category %>
+      </h6>
+      <p class="p-3">
+        <%= foundBlog.description %>
+      </p>
+
+
+      <!-- ----------------------------------(Blog Customization)--------------------------------------------- -->
+      <div class="d-flex justify-content-center ">
+        <div class="p-3">
+          <a class="btn btn-danger fa" href="/blog">&#xf060; Go Back</a>
+        </div>
+
+        <div class="p-3">
+          <a class="btn btn-danger fa" href="/edit_blog/<%= foundBlog._id %>">&#xf044; Edit</a>
+        </div>
+
+        <div class="p-3">
+          <form action="/delete_blog/<%= foundBlog._id %>?_method=delete" method="post">
+            <button class="btn btn-danger fa">&#xf1f8; Delete</button>
+          </form>
+        </div>
+      </div>
+      <!-- ----------------------------------END (Blog Customization)------------------------------------------------------------------ -->
+
+      <hr />
+    </div>
+    <%- include("../partials/footer") %>
+      <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

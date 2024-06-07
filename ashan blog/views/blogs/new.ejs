@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+  <body>
+    <%- include("../partials/navbar") %>
+    <div class="container pt-5">
+      <h2 class="text-center fw-bold" >Add New Blog Post Here</h2>
+      <div class="row pt-3">
+        <div class="col-md-6 p-3">
+          <img src="/img/addingNewPost2.jpg" style="width: 100%;" alt="adding new blog post">
+        </div>
+        <div class="col-md-6 p-3">
+          <form action="/create_new_blog" method="post">
+            <div class="mb-3">
+              <input type="text" id="title" placeholder="Title" name="title" />
+            </div>
+            
+            <div class="mb-3">
+              <textarea
+                name="description"
+                cols="30"
+                rows="3"
+                placeholder="Description"
+              ></textarea>
+            </div>
+    
+            <div class="mb-3">
+              <input type="text" placeholder="Author" name="author" />
+            </div>
+    
+            <div class="mb-3">
+              <input type="text" placeholder="Image URL" name="image" />
+            </div>
+    
+            <div class="mb-3">
+              <input type="date" placeholder="Created Date" name="createdDate"c />
+            </div>
+    
+            <div class="mb-3">
+              <input type="text" placeholder="category" name="category" />
+            </div>
+    
+            <button class="btn btn-danger">Submit</button>
+          </form>    
+        </div>
+      </div>
+    </div>
+
+    <%- include("../partials/footer") %>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head") %>
+</head>
+
+<body>
+  <%- include("../partials/navbar") %>
+    <div class="container pt-5">
+      <h1 class="text-center">Learn programming online with Ashan</h1>
+      <hr>
+
+      <!-- --------------------------------- All Posts ---------------------------------------------------- -->
+      <div class="row ">
+        <% for(let blog of blogs){ %>
+          <div class=" col-md-12 col-lg-7 py-4">
+            <a href="show_details/<%= blog._id %>">
+              <img class="rounded" style="width: 100%;" src="<%= blog.image %> " alt="" />
+            </a>          
+          </div>
+
+          <div class="col-md-12 col-lg-5 py-4">
+            <h6><%= blog.createdDate %></h6>
+            <a class="text-decoration-none text-black" href="show_details/<%= blog._id %>">
+              <h3 class="fw-bold text-uppercase pt-3"><%= blog.title %></h3>
+            </a>
+            <p><%= blog.description %></p>
+            <hr>
+            <h6 class="pt-1 text-capitalize">Written By <%= blog.author %>. </h6>
+            <h6 class="fw-light">category : <%= blog.category %></h6>
+          </div>
+          <hr>
+          <% } %>
+      </div>
+      <!-- --------------------------------- END (Recent Posts)  ---------------------------------------------------- -->
+    </div>
+
+    <%- include("../partials/footer") %>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

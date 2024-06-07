@@ -1,0 +1,20 @@
+{
+  "name": "numanblog",
+  "version": "1.0.0",
+  "description": "this is programming blog in which i discuss about programming related topic and every thing you need to know to get started",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Numan Abdullah",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.4.1",
+    "react-bootstrap": "^2.4.0"
+  }
+}

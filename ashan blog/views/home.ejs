@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head") %>
+
+  <body>
+    <%- include("partials/navbar") %>
+
+      <!-- --------------------------------- Home ----------------------------------------------------- -->
+      <section class="wellcome-section">
+        <div class="d-flex justify-content-center align-items-center"
+          style="background-image: url(img/wellcometohome.jpg); min-height: 100vh; background-size: cover;">
+        </div>
+      </section>
+      <!-- --------------------------------- END (Home)---------------------------------------------------- -->
+
+      <div class="container pt-5">
+        <!-- ----------------------------------INTRODUCTION OF SELECTED NICHE-------------------------------------------------------- -->
+        <section class="pt-5">
+          <h1 class="text-underline text-center">INTRODUCTION</h1>
+          <p class="fs-5 pt-3">In<a style="font-family: 'Montserrat', display;"
+              class="text-black text-decoration-none fw-bold" href="/">
+              Ash<span class="text-danger">an</span><span> &lt/></span></a> Programming Blog “Basics of Programming”
+            series, i discuss programming-related topics and everything you need to know to get started. Stay tuned for
+            new articles and find the answer to every <span class="fw-bold">“what”</span>, <span
+              class="fw-bold">“why”</span>, and <span class="fw-bold">“how”</span>, you may have had about coding!
+
+            Would you like to learn how to code, Come and <a class="text-black " style="text-underline-offset: 4px;"
+              href="first5blog"> try my first 5 Blogs for free</a> at the <a style="font-family: 'Montserrat', display;"
+              class="text-black text-decoration-none fw-bold" href="/">
+              Ash<span class="text-danger">an</span><span> &lt/></span></a> Programming Blog.
+          </p>
+        </section>
+        <!-- -----------------------------------END (INTRODUCTION OF SELECTED NICHE)-------------------------------------------------------------- -->
+
+        <!-- --------------------------------- Recent Posts ---------------------------------------------------- -->
+        <div class="d-flex justify-content-between pt-5">
+          <div>
+            <h2>Most Recent Posts</h2>
+          </div>
+          <div class="pt-3 pe-5">
+            <a class="fw-bold text-decoration-none" href="/blog">View All Posts</a>
+          </div>
+        </div>
+        <hr>
+        <!-- Recent Posts  -->
+        <div class="row ">
+          <% for(let blog of blogs){ %>
+            <div class=" col-md-6 col-lg-4 py-4">
+
+              <a href="show_details/<%= blog._id %>">
+                <img class="rounded" style="width: 100%;" src="<%= blog.image %> " alt="" />
+              </a>
+
+              <h6 class="pt-1">
+                <%= blog.category %>
+              </h6>
+
+              <a class="text-decoration-none text-black" href="show_details/<%= blog._id %>">
+                <h3>
+                  <%= blog.title %>
+                </h3>
+              </a>
+
+            </div>
+            <% } %>
+        </div>
+        <!-- --------------------------------- END (Recent Posts)  ---------------------------------------------------- -->
+      </div>
+
+
+      <%- include("partials/footer") %>
+        <script src="/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
